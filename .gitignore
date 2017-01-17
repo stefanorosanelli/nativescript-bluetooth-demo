@@ -1,6 +1,7 @@
 */bin
 */obj
 *.user-settings.xml
+.history/
 Bluetooth/node_modules
 Bluetooth/platforms
 Bluetooth/lib
