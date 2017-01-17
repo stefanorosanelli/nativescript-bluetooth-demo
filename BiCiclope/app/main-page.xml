@@ -6,11 +6,12 @@
           <ScrollView>
             <StackLayout cssClass="tab-content">
               <Image margin="10" src="~/res/biciclope-logo.png" />
-              <Label text="BiCiclope App Demo" cssClass="title"/>
+              <Label text="Ciao Ermete!" cssClass="title"/>
               <!--
                 <Label text="The Bluetooth plugin allows your app to scan for Bluetooth LE devices. Once found you can connect to a peripheral and read values. You can also write values and get notified when a value changes." textWrap="true"/>
               -->
-              <Label text="This demo app scans for BiCiclope BLE devices" textWrap="true"/>
+              <Label text=" La tua bicicletta è connessa!" textWrap="true"/>
+              <Image margin="10" src="~/res/bici-ermete.jpg" borderRadius="20"/>
             </StackLayout>
           </ScrollView>
         </TabViewItem.view>
@@ -20,9 +21,10 @@
           <StackLayout>
               <GridLayout columns="*,*" rows="auto, auto, auto, auto" horizontalAlignment="center" cssClass="tab-content">
                 <Button row="0" colSpan="2" text="is bluetooth enabled?" tap="{{ doIsBluetoothEnabled }}" cssClass="button button-positive" />
-                <Label row="1" colSpan="2" text="scan 4 seconds for:" cssClass="hint" textWrap="true" />
-                <Button row="2" col="0" text="any peripheral" tap="{{ doStartScanning }}" cssClass="button button-neutral" />
-                <Button row="2" col="1" text="a heartrate monitor" tap="{{ doScanForHeartrrateMontitor }}" cssClass="button button-neutral" />
+                <Button row="2" colSpan="2" text="start scan (5 sec)" tap="{{ doStartScanning }}" cssClass="button button-neutral" />
+                <!-- 
+                    <Button row="2" col="1" text="a heartrate monitor" tap="{{ doScanForHeartrrateMontitor }}" cssClass="button button-neutral" />
+                -->
                 <Button row="3" colSpan="2" text="stop scan" tap="{{ doStopScanning }}" cssClass="button button-danger" />
               </GridLayout>
               <ActivityIndicator busy="{{ isLoading }}" />

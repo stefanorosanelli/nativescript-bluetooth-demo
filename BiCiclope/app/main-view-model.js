@@ -97,7 +97,7 @@ var DemoAppModel = (function (_super) {
           bluetooth.startScanning(
             {
               serviceUUIDs: [], // pass an empty array to scan for all services
-              seconds: 4, // passing in seconds makes the plugin stop scanning after <seconds> seconds
+              seconds: 5, // passing in seconds makes the plugin stop scanning after <seconds> seconds
               onDiscovered: function (peripheral) {
                 var obsp = new observable.Observable(peripheral);
                 observablePeripheralArray.push(obsp);

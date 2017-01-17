@@ -2,8 +2,8 @@
 */obj
 *.user-settings.xml
 .history/
-Bluetooth/node_modules
-Bluetooth/platforms
-Bluetooth/lib
-Bluetooth/bin
-Bluetooth/hooks
+BiCiclope/node_modules
+BiCiclope/platforms
+BiCiclope/lib
+BiCiclope/bin
+BiCiclope/hooks
