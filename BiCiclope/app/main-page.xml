@@ -33,7 +33,7 @@
                       <ListView.itemTemplate>
                           <StackLayout orientation="horizontal" cssClass="padded-label">
                               <StackLayout col="0" cssClass="padded-label-stack">
-                                <Image horizontalAlignment="right" width="30" src="~/res/signal-strength.png" />
+                                <Image horizontalAlignment="right" width="30" src="~/res/radar-48.png" />
                                 <Label horizontalAlignment="right" width="30" text="{{ RSSI }}" cssClass="rssi-label" />
                               </StackLayout>
                               <StackLayout col="1" cssClass="padded-label-stack">
