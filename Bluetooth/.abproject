@@ -1,11 +1,11 @@
 {
-  "ProjectName": "Bluetooth",
+  "ProjectName": "BiCiclope",
   "ProjectGuid": "f03f6a5d-914b-48be-862c-04f88787c3d7",
   "projectVersion": 1,
   "AppIdentifier": "com.telerik.plugindemo.nativescript.bluetooth",
-  "DisplayName": "Bluetooth",
+  "DisplayName": "BiCiclope",
   "Author": "Telerik",
-  "Description": "Bluetooth",
+  "Description": "BiCiclope",
   "BundleVersion": "1.0.2",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [

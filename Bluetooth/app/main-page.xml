@@ -1,18 +1,21 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
   <TabView>
     <TabView.items>
-      <TabViewItem title="About">
+      <TabViewItem title="Info">
         <TabViewItem.view>
           <ScrollView>
             <StackLayout cssClass="tab-content">
-              <Image margin="10" src="~/res/telerik-logo.png" />
-              <Label text="Bluetooth plugin demo" cssClass="title"/>
-              <Label text="The Bluetooth plugin allows your app to scan for Bluetooth LE devices. Once found you can connect to a peripheral and read values. You can also write values and get notified when a value changes." textWrap="true"/>
+              <Image margin="10" src="~/res/biciclope-logo.png" />
+              <Label text="BiCiclope App Demo" cssClass="title"/>
+              <!--
+                <Label text="The Bluetooth plugin allows your app to scan for Bluetooth LE devices. Once found you can connect to a peripheral and read values. You can also write values and get notified when a value changes." textWrap="true"/>
+              -->
+              <Label text="This demo app scans for BiCiclope BLE devices" textWrap="true"/>
             </StackLayout>
           </ScrollView>
         </TabViewItem.view>
       </TabViewItem>
-      <TabViewItem title="Demo">
+      <TabViewItem title="Services">
         <TabViewItem.view>
           <StackLayout>
               <GridLayout columns="*,*" rows="auto, auto, auto, auto" horizontalAlignment="center" cssClass="tab-content">
