@@ -2,8 +2,9 @@
 */obj
 *.user-settings.xml
 .history/
-BiCiclope/node_modules
-BiCiclope/platforms
-BiCiclope/lib
-BiCiclope/bin
-BiCiclope/hooks
+.vscode/
+node_modules/
+platforms/
+lib/
+bin/
+hooks/
