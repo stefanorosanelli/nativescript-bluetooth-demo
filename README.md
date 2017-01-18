@@ -1,8 +1,5 @@
-# nativescript-bluetooth demo app
+# BiCiclope demo app
 
-Demo app for the [NativeScript Bluetooth plugin](https://github.com/EddyVerbruggen/nativescript-bluetooth)
-
-<img src="bluetooth-demo.gif"/>
 
 ## Installation
 
@@ -11,8 +8,7 @@ Once you have the [CLI installed](https://github.com/NativeScript/nativescript-c
 
 ```
 $ git clone https://github.com/EddyVerbruggen/nativescript-bluetooth-demo
-$ cd nativescript-bluetooth-demo
-$ cd Bluetooth
+$ cd BiCiclope
 ```
 
 Next, install the app's iOS and Android runtimes, as well as the app's npm dependencies:
