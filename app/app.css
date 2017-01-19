@@ -44,6 +44,10 @@ button {
   background-color: #A63D40;
 }
 
+.button-disabled {
+  background-color: #555555;
+}
+
 .button-neutral {
   background-color: #6494AA;
 }

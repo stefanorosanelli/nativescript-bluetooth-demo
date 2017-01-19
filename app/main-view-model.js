@@ -7,6 +7,7 @@ var DemoAppModel = (function (_super) {
   __extends(DemoAppModel, _super);
   function DemoAppModel() {
     _super.call(this);
+    this.set('isLoading', false);
   }
   
   DemoAppModel.prototype.doIsBluetoothEnabled = function () {
@@ -44,6 +45,16 @@ var DemoAppModel = (function (_super) {
 
   DemoAppModel.prototype.doStartScanning = function () {
     var that = this;
+    console.log('start scan requested');
+//    that.set('isLoading', true);
+    // reset the array
+//    observablePeripheralArray.splice(0, observablePeripheralArray.length); 
+//    setTimeout(function() {
+//            console.log('timeout 5 sec...')
+//            that.set('isLoading', false);
+//        },
+//        5000);
+
 
     // On Android 6 we need this permission to be able to scan for peripherals in the background.
      bluetooth.hasCoarseLocationPermission().then(
@@ -65,9 +76,11 @@ var DemoAppModel = (function (_super) {
             }
           ).then(function() {
             that.set('isLoading', false);
+            console.log('scan terminated');
           },
           function (err) {
             that.set('isLoading', false);
+            console.err('scan stopped on error ' + err);
             dialogs.alert({
               title: "Whoops!",
               message: err,
@@ -81,6 +94,9 @@ var DemoAppModel = (function (_super) {
 
   DemoAppModel.prototype.doStopScanning = function () {
     var that = this;
+    console.log('stop scan requested');
+    //that.set('isLoading', false);
+
     bluetooth.stopScanning().then(function() {
       that.set('isLoading', false);
     },

@@ -21,12 +21,12 @@
           <StackLayout>
               <GridLayout columns="*,*" rows="auto, auto, auto, auto" horizontalAlignment="center" cssClass="tab-content">
                 <!-- <Button row="0" colSpan="2" text="is bluetooth enabled?" tap="{{ doIsBluetoothEnabled }}" cssClass="button button-positive" /> -->
-                <Button row="0" colSpan="2" text="start scan" tap="{{ doStartScanning }}" cssClass="button button-positive" />
+                <Button row="0" colSpan="2" text="{{ isLoading ? 'scanning....' : 'start scan' }}" tap="{{ doStartScanning }}" isEnabled="{{ !isLoading }}" cssClass="{{ isLoading ? 'button button-disabled' : 'button button-positive' }}" />
                 <!-- 
                     <Button row="2" col="1" text="a heartrate monitor" tap="{{ doScanForHeartrrateMontitor }}" cssClass="button button-neutral" />
                 -->
-                <Button row="2" colSpan="2" text="stop scan" tap="{{ doStopScanning }}" cssClass="button button-danger" />
-                <Button row="3" colSpan="2" text="clear list" tap="{{ doClearList }}" cssClass="button button-neutral" />
+                <Button row="1" colSpan="2" text="stop scan" tap="{{ doStopScanning }}" cssClass="{{ isLoading ? 'button button-danger' : 'button button-disabled' }}" isEnabled="{{ isLoading }}"/>
+                <Button row="2" colSpan="2" text="clear list" tap="{{ doClearList }}" cssClass="button button-neutral" />
               </GridLayout>
               <ActivityIndicator busy="{{ isLoading }}" />
               <GridLayout rows="*">
