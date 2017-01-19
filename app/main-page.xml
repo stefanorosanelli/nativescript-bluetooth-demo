@@ -19,16 +19,18 @@
       <TabViewItem title="Services">
         <TabViewItem.view>
           <StackLayout>
-              <GridLayout columns="*,*" rows="auto, auto, auto, auto" horizontalAlignment="center" cssClass="tab-content">
+              <GridLayout columns="*,*,*" rows="auto, auto, auto, auto" horizontalAlignment="center" cssClass="tab-content">
                 <!-- <Button row="0" colSpan="2" text="is bluetooth enabled?" tap="{{ doIsBluetoothEnabled }}" cssClass="button button-positive" /> -->
-                <Button row="0" colSpan="2" text="{{ isLoading ? 'scanning....' : 'start scan' }}" tap="{{ doStartScanning }}" isEnabled="{{ !isLoading }}" cssClass="{{ isLoading ? 'button button-disabled' : 'button button-positive' }}" />
+                <Button row="0" col="0" text="start scan" tap="{{ doStartScanning }}" isEnabled="{{ !isLoading }}" cssClass="button button-positive" />
                 <!-- 
                     <Button row="2" col="1" text="a heartrate monitor" tap="{{ doScanForHeartrrateMontitor }}" cssClass="button button-neutral" />
                 -->
-                <Button row="1" colSpan="2" text="stop scan" tap="{{ doStopScanning }}" cssClass="{{ isLoading ? 'button button-danger' : 'button button-disabled' }}" isEnabled="{{ isLoading }}"/>
-                <Button row="2" colSpan="2" text="clear list" tap="{{ doClearList }}" cssClass="button button-neutral" />
+                <Button row="0" col="1" text="stop scan" tap="{{ doStopScanning }}" cssClass="button button-danger" isEnabled="{{ isLoading }}"/>
+                <Button row="0" col="2" text="clear list" tap="{{ doClearList }}" cssClass="button button-neutral" /> -->
+                <Label  row="1" col="1" text=" {{ scanStatus }} " textWrap="true"/>
+
               </GridLayout>
-              <ActivityIndicator busy="{{ isLoading }}" />
+              <ActivityIndicator busy="{{ isLoading }}" rowSpan="2" colSpan="2" />
               <GridLayout rows="*">
                   <ListView items="{{ peripherals }}" itemTap="onPeripheralTap" separatorColor="#90c3d4">
                       <ListView.itemTemplate>

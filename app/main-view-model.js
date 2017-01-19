@@ -8,6 +8,7 @@ var DemoAppModel = (function (_super) {
   __extends(DemoAppModel, _super);
   function DemoAppModel() {
     _super.call(this);
+    this.set('isLoading', false);
   }
   
   DemoAppModel.prototype.doIsBluetoothEnabled = function () {
@@ -48,18 +49,24 @@ var DemoAppModel = (function (_super) {
   DemoAppModel.prototype.doStartScanning = function () {
       var that = this;
       console.log('start scan requested');
-//      that.set('isLoading', true);
+/*
+      that.set('isLoading', true);
+      that.set('scanStatus', 'scanning....');
+     
       // reset the array
-//      observablePeripheralArray.splice(0, observablePeripheralArray.length); 
-//      setTimeout(function() {
-//            console.log('timeout 5 sec...')
-//            that.set('isLoading', false);
-//        },
-//        5000);
+      observablePeripheralArray.splice(0, observablePeripheralArray.length); 
+      setTimeout(function() {
+            console.log('timeout 5 sec...')
+            that.set('isLoading', false);
+            that.set('scanStatus', '');
+        },
+        5000);
+*/
 
       bluetooth.isBluetoothEnabled().then(function (enabled) {
           if (!enabled) {
               console.log('bluetooth not enabled');
+              that.set('scanStatus', '');
               dialogs.alert({
                   title: "Bluetooth not enabled",
                   //message: enabled ? "Yes" : "No",
@@ -87,10 +94,12 @@ var DemoAppModel = (function (_super) {
                       ).then(function () {
                           that.set('isLoading', false);
                           console.log('scan terminated');
+                          that.set('scanStatus', 'scan terminated');
                       },
                           function (err) {
                               that.set('isLoading', false);
                               console.err('scan stopped on error ' + err);
+                              that.set('scanStatus', 'scan terminated on error');
                               dialogs.alert({
                                   title: "Whoops!",
                                   message: err,
@@ -106,10 +115,12 @@ var DemoAppModel = (function (_super) {
   DemoAppModel.prototype.doStopScanning = function () {
     var that = this;
     console.log('stop scan requested');
-//    that.set('isLoading', false);
 
+//    that.set('isLoading', false);
+//    that.set('scanStatus', '');
     bluetooth.stopScanning().then(function() {
-      that.set('isLoading', false);
+        that.set('isLoading', false);
+        that.set('scanStatus', 'scan stopped');
     },
     function (err) {
       dialogs.alert({
@@ -118,7 +129,6 @@ var DemoAppModel = (function (_super) {
         okButtonText: "OK, so be it"
       });
     });
-
   };
   
   DemoAppModel.prototype.doClearList = function () {
