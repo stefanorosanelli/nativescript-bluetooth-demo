@@ -27,7 +27,6 @@
                 -->
                 <Button row="0" col="1" text="stop scan" tap="{{ doStopScanning }}" isEnabled="{{ isLoading }}" cssClass="{{ isLoading ? 'button button-danger' : 'button button-disabled' }}" />
                 <Button row="0" col="2" text="clear list" tap="{{ doClearList }}" cssClass="button button-neutral" />
-                <Label  row="1" col="1" text=" {{ scanStatus }} " textWrap="true"/>
 
               </GridLayout>
               <ActivityIndicator busy="{{ isLoading }}" rowSpan="2" colSpan="2" />

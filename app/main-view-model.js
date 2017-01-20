@@ -51,14 +51,12 @@ var DemoAppModel = (function (_super) {
       console.log('start scan requested');
 /*
       that.set('isLoading', true);
-      that.set('scanStatus', 'scanning....');
      
       // reset the array
       observablePeripheralArray.splice(0, observablePeripheralArray.length); 
       setTimeout(function() {
             console.log('timeout 5 sec...')
             that.set('isLoading', false);
-            that.set('scanStatus', '');
         },
         5000);
 */
@@ -94,12 +92,10 @@ var DemoAppModel = (function (_super) {
                       ).then(function () {
                           that.set('isLoading', false);
                           console.log('scan terminated');
-                          that.set('scanStatus', 'scan terminated');
                       },
                           function (err) {
                               that.set('isLoading', false);
                               console.err('scan stopped on error ' + err);
-                              that.set('scanStatus', 'scan terminated on error');
                               dialogs.alert({
                                   title: "Whoops!",
                                   message: err,
@@ -118,11 +114,9 @@ var DemoAppModel = (function (_super) {
     console.log('stop scan requested');
 /*
     that.set('isLoading', false);
-    that.set('scanStatus', '');
 */
     bluetooth.stopScanning().then(function() {
         that.set('isLoading', false);
-        that.set('scanStatus', 'scan stopped');
     },
     function (err) {
       dialogs.alert({
