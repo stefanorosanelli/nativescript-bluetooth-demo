@@ -8,3 +8,5 @@ platforms/
 lib/
 bin/
 hooks/
+.DS_Store
+app/App_Resources/iOS/build.xcconfig
