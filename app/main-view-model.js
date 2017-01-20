@@ -85,7 +85,7 @@ var DemoAppModel = (function (_super) {
                       bluetooth.startScanning(
                           {
                               serviceUUIDs: [], // pass an empty array to scan for all services
-                              // seconds: 5, // passing in seconds makes the plugin stop scanning after <seconds> seconds
+                              seconds: 60, // passing in seconds makes the plugin stop scanning after <seconds> seconds
                               onDiscovered: function (peripheral) {
                                   var obsp = new observable.Observable(peripheral);
                                   observablePeripheralArray.push(obsp);
@@ -110,14 +110,16 @@ var DemoAppModel = (function (_super) {
               }
           );
       });
+
   };
 
   DemoAppModel.prototype.doStopScanning = function () {
     var that = this;
     console.log('stop scan requested');
-
-//    that.set('isLoading', false);
-//    that.set('scanStatus', '');
+/*
+    that.set('isLoading', false);
+    that.set('scanStatus', '');
+*/
     bluetooth.stopScanning().then(function() {
         that.set('isLoading', false);
         that.set('scanStatus', 'scan stopped');
